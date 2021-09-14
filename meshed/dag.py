@@ -282,7 +282,7 @@ def basic_node_validator(func_node):
     )
 
 def clean_args(dag, *args, **kwargs):
-    new_kwargs = Sig(dag).kwargs_from_args_and_kwargs(*args, **kwargs)
+    new_kwargs = Sig(dag).kwargs_from_args_and_kwargs(args, kwargs)
     return new_kwargs
 
 # TODO: Think of the hash more carefully.
