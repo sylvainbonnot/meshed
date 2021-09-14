@@ -757,7 +757,8 @@ class DAG:
         **keyword_dflts,
     ):
         if positional_dflts:
-            raise NotImplemented('Need to map positional_dflts to keyword_defaults')
+            keyword_dflts = clean_args(*positional_dflts,**keyword_dflts)
+            
         # TODO(mk_instance): What about other init args (cache_last_scope, ...)?
         mk_instance = type(self)
         func_nodes = partialized_funcnodes(self, **keyword_dflts)
