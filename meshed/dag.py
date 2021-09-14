@@ -757,7 +757,7 @@ class DAG:
         **keyword_dflts,
     ):
         if positional_dflts:
-            keyword_dflts = clean_args(*positional_dflts,**keyword_dflts)
+            keyword_dflts = clean_args(self, *positional_dflts,**keyword_dflts)
             
         # TODO(mk_instance): What about other init args (cache_last_scope, ...)?
         mk_instance = type(self)
