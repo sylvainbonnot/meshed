@@ -281,6 +281,9 @@ def basic_node_validator(func_node):
         f"{', '.join(bind_names_not_in_sig_names)}"
     )
 
+def clean_args(dag, *args, **kwargs):
+    new_kwargs = Sig(dag).kwargs_from_args_and_kwargs(*args, **kwargs)
+    return new_kwargs
 
 # TODO: Think of the hash more carefully.
 # TODO: Allo
